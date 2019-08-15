@@ -5,13 +5,20 @@ const NotMembers = styled.div`
   text-align: center;
 `;
 
-const Members = ({ team }) => {
-  //state
-  if (!team.team) {
-    return <NotMembers>You have no Team Members yet!</NotMembers>;
-  }
+function TeamMember(props) {
+  return (
+    <div>
+      {props.memberList.map(member => {
+        return (
+          <div key={member.id}>
+            <h2>{member.name}</h2>
+            <h3>{member.role}</h3>
+            <p>{member.email}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
-  return <div>List of Members will go here.</div>;
-};
-
-export default Members;
+export default TeamMember;
