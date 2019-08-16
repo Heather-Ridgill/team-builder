@@ -5,13 +5,23 @@ import styled from "styled-components";
 const MemberForm = styled.form`
   display: flex;
   flex-direction: column;
-  color: red;
+  border-style: dashed;
+  background-color: red;
   width: 30%;
   margin: auto;
-  input,
+  label {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  input {
+    font-weight: bold;
+    font-size: 19px;
+  }
   select {
-    height: 30px;
-    padding: 5px;
+    font-size: 19px;
+  }
+  button {
+    font-size: 19px;
   }
 `;
 
@@ -37,7 +47,7 @@ function Form(props) {
   }
 
   return (
-    <form onSubmit={submitForm}>
+    <MemberForm onSubmit={submitForm}>
       <label htmlFor="name">Member Name</label>
       <input
         type="text"
@@ -63,7 +73,7 @@ function Form(props) {
       </select>
 
       <button type="submit">Add Team Member</button>
-    </form>
+    </MemberForm>
   );
 }
 
